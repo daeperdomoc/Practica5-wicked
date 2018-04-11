@@ -20,11 +20,12 @@ curl -X POST -i 'http://0.0.0.0:3000/posts' -d "post[name]=Este es un post" -d "
    ```
  bundle install
  ```
+ >Tambien ejecutamos ```rails db:migrate``` para hacer la migracion del modelo Post que esta en el esqueleto.
  3. Ahora creamos un inicializador para *wicked_pdf* con el comando:
 ```
 rails generate wicked_pdf
 ```
- 4. Dentro de ese archivo veremos la línea *exe_path: '/usr/local/bin/wkhtmltopdf',* comentada, para poder ver donde está la herramienta *wkhtmltopdf* en nuestro equipo ejecutamos el siguiente comando, descomentamos la línea y remplazamos el *path*.
+ 4. El inicializador crea el archivo '/config/initializers/wicked_pdf.rb' Dentro de ese archivo veremos la línea *exe_path: '/usr/local/bin/wkhtmltopdf',* comentada, para poder ver donde está la herramienta *wkhtmltopdf* en nuestro equipo ejecutamos el siguiente comando, descomentamos la línea y remplazamos el *path*.
  ```
  which wkhtmltopdf
 ```
@@ -32,7 +33,7 @@ rails generate wicked_pdf
 ```
 rails generate controller Pdfs
 ``` 
-6. Escribimos el siguiente código:
+6. Escribimos el siguiente código en el archivo '/app/controllers/pdfs_controller.rb':
 ```ruby
 class  PdfsController  <  ActionController::Base
 	def  show
@@ -64,19 +65,19 @@ def get_model
 end
 ```
 > Tambien añadimos el llamado a *get_model* dentro de *show*
-2. Añadimos las siguientes líneas al template:
+2. Añadimos las siguientes líneas al template en el archivo '/presentacion_wicked_pdf/app/views/pdfs/template.pdf.erb':
 ```
 <h1>Posts</h1>
   <table>
     <th>Id</th>
     <th>Nombre</th>
     <th>Content</th>
+    <% @posts.each do |post| %>
+      <tr>
+          <td><%= post.id %></td>
+          <td><%= post.name %></td>
+          <td><%= post.content %></td>
+      </tr>
+    <% end %>
   </table>
-  <% @posts.each do |post| %>
-    <table>
-        <td><%= post.id %></td>
-        <td><%= post.name %></td>
-        <td><%= post.content %></td>
-    </table>
- <% end %>
 ```
