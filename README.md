@@ -65,7 +65,7 @@ def get_model
 end
 ```
 > Tambien añadimos el llamado a *get_model* dentro de *show*
-2. Añadimos las siguientes líneas al template en el archivo '/presentacion_wicked_pdf/app/views/pdfs/template.pdf.erb':
+2. Añadimos las siguientes líneas al template en el archivo '/app/views/pdfs/template.pdf.erb':
 ```
 <h1>Posts</h1>
   <table>
