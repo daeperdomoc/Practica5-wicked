@@ -5,7 +5,11 @@ La gema de ruby **wicked_pdf** permite la creación automática de archivos pdf 
 ```
 git clone https://github.com/UNequipoG1/presentacion_wicked_pdf.git
 ```
->Esta aplicación tiene un modelo (*Post*) ya creado que utilizaremos más adelante.
+>Esta aplicación tiene un modelo (*Post*) ya creado que utilizaremos más adelante. Por ahora debemos hacer un *rails db:migrate*.
+>Para poder ingesar datos al modelo *Post* podemos usar CURL de la siguente forma:
+```bash
+curl -X POST -i 'http://0.0.0.0:3000/posts' -d "post[name]=Este es un post" -d "post[content]=Este es el contenido del post"
+```
  2. Ahora instalaremos la gema **wicked_pdf** para poder trabajar puesto que **wicked_pdf** es un *wrapper* de la gema **wkhtmltopdf-binary**  tambien debemos instalarla:
  > En el archivo GemFile añadimos las siguientes líneas:
   ```
