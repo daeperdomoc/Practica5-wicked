@@ -20,7 +20,7 @@ git clone https://github.com/UNequipoG1/presentacion_wicked_pdf.git
 ```
 rails generate wicked_pdf
 ```
- 4. Dentro de ese arhivo veremos la línea *exe_path: '/usr/local/bin/wkhtmltopdf',* comentada, para poder ver donde está la herramienta *wkhtmltopdf* en nuestro equipo ejecutamos el siguiente comando, descomentamos la línea y remplazamos el *path*.
+ 4. Dentro de ese archivo veremos la línea *exe_path: '/usr/local/bin/wkhtmltopdf',* comentada, para poder ver donde está la herramienta *wkhtmltopdf* en nuestro equipo ejecutamos el siguiente comando, descomentamos la línea y remplazamos el *path*.
  ```
  which wkhtmltopdf
 ```
