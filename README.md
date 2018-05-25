@@ -1,3 +1,9 @@
+# EXPO 3
+
+Trabajo en clase realizado en workspace de cloud9 con descripcion: rails wicked expo
+
+![alt text](http://drive.google.com/uc?export=view&id=1qXIjM6hMOz5mwcua_Yk0Cc8AxEFFHd5Z)
+
 # Tutorial uso de la gema  wicked_pdf
 La gema de ruby **wicked_pdf** permite la creación automática de archivos pdf para Ruby on Rails, este tutorial presenta la forma más básica para implementarla en aplicaciones tipo API.
 ## Implementación básica
